@@ -8,11 +8,12 @@ jobs:
     deployment:
       runs-on: ubuntu-latest
       steps:
-
       - name: checkout to root directory
         uses: actions/checkout@v4
 
-        
+      - name: list the directory
+        uses: ls
+
           
 
       
