@@ -1,30 +1,13 @@
-name: Configure Web
-on: 
-    push: 
-        branches:
-        - master
-        - main
-        - deploy
-jobs: 
-    configure_job: 
-        runs-on: self-hosted
-        steps: 
-            - name: configure application
-              run: |
-                echo "Everything works fine!!!"
-                echo "------------------------"
-                echo "---"
+name: building_web_app
+on:
+    push:
+      branches:
+      - master
 
-            - name: "Install Server"
-              run: |
-                sudo apt update
-                sudo apt install nginx -y
-            
-              
-            - name: "Download updated source code"
-              run: |
-                cd /var/www/
-                sudo rm -rf html
-                sudo mkdir html
-                cd html
-                sudo git clone https://github.com/theoafactor/companyweb.com.git .
+jobs:
+    deployment:
+      runs-on: ubuntu-latest
+      steps:
+        
+
+
